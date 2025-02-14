@@ -1,0 +1,33 @@
+class Employee:
+    def __init__(self, name, position, salary):
+        self.name = name
+        self.position = position
+        self.salary = salary
+
+    def give_raise(self, amount):
+        if amount > 0:
+            self.salary += amount
+            print(f"Raise of ${amount} given. New salary: ${self.salary}")
+        else:
+            print("Raise amount must be positive.")
+
+    def display_employee(self):
+        print(f"Name: {self.name}")
+        print(f"Position: {self.position}")
+        print(f"Salary: ${self.salary}")
+        print("-" * 20)  # Separator
+
+
+# Create an employee
+employee1 = Employee("Alice Smith", "Software Engineer", 70000)
+
+# Display initial details
+employee1.display_employee()
+
+# Give a raise
+employee1.give_raise(5000)
+
+# Display updated details
+employee1.display_employee()
+
+employee1.give_raise(-1000) #Invalid raise amount
